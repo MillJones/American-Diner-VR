@@ -22,6 +22,17 @@
 
       <a-sky src="#sky"></a-sky>
       
+      scene.add(stage)
+      
+      const audiolistener = new THREE.AudioListener()
+      camera.add(audioListener)
+      const audio = new THREE.Audio(audioListener)
+      
+      const audioLoader = new THREE.AudioLoader()
+      audioLoader.load(./'Those Magic Changes (From “Grease”).mp3',(mp3)=>{
+        audio.setBuffer(mp3)
+      })
+      
        <!-- <audio controls>
       
       <source src="Those Magic Changes (From “Grease”).mp3" type="audio/mpeg"> -->
